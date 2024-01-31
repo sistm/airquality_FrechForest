@@ -100,7 +100,7 @@ mtryValues <- 1:ncol(airCurves$X)
 # save(oobErrorsMtryTuneCO, file = "oobErrorsMtryTuneCO.Rdata")
 
 load("oobErrorsMtryTuneCO.Rdata")
-boxplot(oobErrorsMtryTuneCO, xlab = "mtry", ylab = "OOB error")
+# boxplot(oobErrorsMtryTuneCO, xlab = "mtry", ylab = "OOB error")
 mtryOpt <- mtryValues[which.min(colMeans(oobErrorsMtryTuneCO))]
 
 ## Optimal RF run
@@ -138,7 +138,7 @@ mtryValues <- 1:ncol(airCurves$X)
 # save(CurveOOBErrorsMtryTuneCO, file = "CurveOOBErrorsMtryTuneCO.Rdata")
 
 load("CurveOOBErrorsMtryTuneCO.Rdata")
-plot(mtryValues, CurveOOBErrorsMtryTuneCO, type = "b")
+# plot(mtryValues, CurveOOBErrorsMtryTuneCO, type = "b")
 CurveMtryOpt <- mtryValues[which.min(CurveOOBErrorsMtryTuneCO)]
 
 ## Optimal FRF run
@@ -198,7 +198,7 @@ load("allErrP2P_CO.Rdata")
 allErrP2P_CO <- data.frame(t(allErrP2P_CO))
 names(allErrP2P_CO) <- c("FRF", "RF")
 summary(allErrP2P_CO)
-boxplot(allErrP2P_CO)
+# boxplot(allErrP2P_CO)
 
 
 ## Comparing variable importance scores
@@ -207,6 +207,7 @@ dfImp <- data.frame(imp = c(rfOpt$importance[, "%IncMSE"], FRFairqualCO$varImp$C
                     type = c(rep("RF", 6), rep("FRF", 6)))
 dfImp$var <- rep(c("C6H6", "Nox", "NO2", "Temp", "RH", "AH"), 2)
 str(dfImp)
+dfImp
 # library(ggplot2)
 # plotImp <- ggplot(data = dfImp, aes(x = var, y = imp)) +
 #   geom_col() +  theme_bw() + facet_wrap(~type) +
