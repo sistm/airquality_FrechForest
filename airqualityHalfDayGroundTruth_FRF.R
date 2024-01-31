@@ -3,7 +3,7 @@
 
 # Data load
 
-air <- read.csv2("air.csv", header = TRUE)
+air <- read.csv2("AirQualityUCI.csv", header = TRUE)
 air <- subset(air, select = c(
   Date, Time, CO.GT., C6H6.GT., NOx.GT., NO2.GT., T, RH, AH))
 
