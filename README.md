@@ -15,9 +15,10 @@ other pollutants, temperature and humidity for the first half-day.
 
 ## Code structure
 
-The code is in airqualityHalfDayGroundTruth_FRF.R file. After a data management
-part, standard Random Forests are applied. These commands are quite fast and can
-be re-run in a few seconds.
+The code is in
+[airqualityHalfDayGroundTruth_FRF.R](https://github.com/sistm/airquality_FrechForest/blob/main/airqualityHalfDayGroundTruth_FRF.R)
+file. After a data management part, standard Random Forests are applied. These
+commands are quite fast and can be re-run in a few seconds.
 
 However, the subsequent code concerns the application of Fréchet Random Forests,
 which can take quite long computation times. We commented the long computations
